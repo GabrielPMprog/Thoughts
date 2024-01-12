@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index localhost 3000",
-   " vercel-build": "npx prisma routes deploy"
+    "vercel-build": "npx prisma db deploy"
   },
   "author": "Gabriel Paiva de Medeiros",
   "license": "ISC",

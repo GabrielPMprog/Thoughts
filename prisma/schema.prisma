@@ -1,0 +1,8 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("postgresql://GabrielPMprog:B28HSsmAiPwV@ep-morning-dew-10221870.us-east-2.aws.neon.tech/ThoughtsDB?sslmode=require")
+}
