@@ -4,6 +4,9 @@ const session = require("express-session");
 const FileStore = require("session-file-store")(session);
 const flash = require("express-flash");
 
+//Config
+require("dotenv").config();
+
 const app = express();
 
 const conn = require("./db/conn");
@@ -13,10 +16,9 @@ const conn = require("./db/conn");
 const Thought = require("./models/Thought");
 const User = require("./models/User");
 
-
 //Routes
-const thoughtRoutes = require('./routes/thoughtsRoutes');
-const authRoutes = require('./routes/authRoutes');
+const thoughtRoutes = require("./routes/thoughtsRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 //Controllers
 const ThoughtController = require("./controllers/ThoughtController");
@@ -67,10 +69,10 @@ app.use((req, res, next) => {
 });
 
 //Routes
-app.use('/thoughts', thoughtRoutes)
-app.use('/', authRoutes)
+app.use("/thoughts", thoughtRoutes);
+app.use("/", authRoutes);
 
-app.get('/', ThoughtController.showThoughts)
+app.get("/", ThoughtController.showThoughts);
 
 conn
   .sync()

@@ -1,8 +1,10 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("toughts","root","",{
-  port: process.env.DB_PORT,
+const sequelize = new Sequelize("toughts", "root", "", {
+
   host: process.env.HOST,
+  port: process.env.DB_PORT,
+
   dialect: "mysql",
 });
 
