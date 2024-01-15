@@ -1,9 +1,6 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("toughts", "root", "", {
-  username: process.env.USERNAME,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
+const sequelize = new Sequelize("toughts","root","",{
   port: process.env.DB_PORT,
   host: process.env.HOST,
   dialect: "mysql",
